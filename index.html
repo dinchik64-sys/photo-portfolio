@@ -94,12 +94,14 @@
       object-fit: cover;
       transition: .3s;
     }
-.gallery img:nth-child(1),
+.gallery img:nth-child(1) {
+    object-position: center 35%;
+}
+
 .gallery img:nth-child(2),
-.gallery img:nth-child(3) 
-    {
+.gallery img:nth-child(3) {
     object-position: center 25%;
- }
+}
     .gallery img:hover {
       transform: scale(1.02);
     }
