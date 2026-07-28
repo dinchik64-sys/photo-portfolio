@@ -131,7 +131,42 @@ background-repeat: no-repeat;
     padding: 100px 10%;
     background: #111;
 }
-    h2 {
+   .services-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 55px;
+    margin-top: 60px;
+    width: 100%;
+}
+
+.services-list span {
+    font-size: 30px;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(25px);
+    animation: serviceShow 0.8s ease forwards;
+}
+
+.services-list span:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.services-list span:nth-child(2) {
+    animation-delay: 0.7s;
+}
+
+.services-list span:nth-child(3) {
+    animation-delay: 1.2s;
+}
+
+@keyframes serviceShow {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+  h2 {
       font-size: 40px;
       margin-bottom: 45px;
       text-align: center;
@@ -291,8 +326,9 @@ background-repeat: no-repeat;
     <h2>Послуги</h2>
 
   <div class="services-list">
+
     <span>Індивідуальна</span>
     <span>Тематична</span>
     <span>Студійна</span>
 </div>
-
+ </section>   
