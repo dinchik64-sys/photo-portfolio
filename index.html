@@ -1,65 +1,217 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Моё фотопортфолио</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-        }
+  <title>Фотограф | Портфоліо</title>
 
-        body{
-            background:#111;
-            color:white;
-            font-family:Arial,sans-serif;
-            text-align:center;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        header{
-            padding:80px 20px;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        h1{
-            font-size:60px;
-            letter-spacing:5px;
-        }
+    body {
+      background: #0d0d0d;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+    }
 
-        p{
-            color:#bbb;
-            margin-top:15px;
-            font-size:20px;
-        }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 22px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(10px);
+      z-index: 10;
+    }
 
-        img{
-            width:90%;
-            max-width:900px;
-            border-radius:15px;
-            margin-top:40px;
-        }
+    .logo {
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
 
-        footer{
-            margin:60px;
-            color:#777;
-        }
-    </style>
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 14px;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 20px 50px;
+      background:
+        linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.75)),
+        url("https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1600")
+        center/cover;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 9vw, 110px);
+      letter-spacing: 8px;
+    }
+
+    .hero p {
+      margin-top: 20px;
+      font-size: 18px;
+      letter-spacing: 3px;
+    }
+
+    section {
+      padding: 100px 7%;
+    }
+
+    h2 {
+      font-size: 40px;
+      margin-bottom: 45px;
+      text-align: center;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      transition: .3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.02);
+    }
+
+    .about {
+      max-width: 750px;
+      margin: auto;
+      text-align: center;
+      line-height: 1.8;
+      color: #ccc;
+      font-size: 18px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .service {
+      border: 1px solid #333;
+      padding: 35px;
+      text-align: center;
+    }
+
+    .service h3 {
+      margin-bottom: 15px;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 30px;
+      border: 1px solid white;
+      color: white;
+      text-decoration: none;
+      transition: .3s;
+    }
+
+    .button:hover {
+      background: white;
+      color: black;
+    }
+
+    footer {
+      padding: 40px;
+      text-align: center;
+      color: #777;
+      border-top: 1px solid #222;
+    }
+
+    @media (max-width: 800px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      nav .links {
+        display: none;
+      }
+
+      .gallery img {
+        height: auto;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-    <h1>МОЄ ПОРТФОЛІО</h1>
-    <p>Фотограф • Портреты • Street • Love Story</p>
+<nav>
+  <div class="logo">PHOTOGRAPHY</div>
 
-    <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1200" alt="photo">
+  <div class="links">
+    <a href="#portfolio">Портфоліо</a>
+    <a href="#about">Про мене</a>
+    <a href="#services">Послуги</a>
+    <a href="#contact">Контакти</a>
+  </div>
+</nav>
+
+
+<header class="hero">
+  <div>
+    <h1>ФОТОГРАФ</h1>
+    <p>PORTRAIT • LIFESTYLE • LOVE STORY</p>
+  </div>
 </header>
 
-<footer>
-    © 2025
-</footer>
 
-</body>
-</html>
+<section id="portfolio">
+
+  <h2>Портфоліо</h2>
+
+  <div class="gallery">
+
+    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=900" alt="Портрет">
+
+    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=900" alt="Портрет">
+
+    <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=900" alt="Фотосесія">
+
+    <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=900" alt="Портрет">
+
+    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=900" alt="Портрет">
+
+    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=900" alt="Портрет">
+
+  </div>
+
+</section>
