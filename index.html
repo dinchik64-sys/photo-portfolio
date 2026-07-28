@@ -213,18 +213,21 @@ background-repeat: no-repeat;
  .contact-item {
     opacity: 0;
     transform: translateY(30px);
+}
+
+#contact.show .contact-item {
     animation: contactShow 0.8s ease forwards;
 }
 
-.contact-item:nth-child(1) {
+#contact.show .contact-item:nth-child(1) {
     animation-delay: 0.2s;
 }
 
-.contact-item:nth-child(2) {
+#contact.show .contact-item:nth-child(2) {
     animation-delay: 0.7s;
 }
 
-.contact-item:nth-child(3) {
+#contact.show .contact-item:nth-child(3) {
     animation-delay: 1.2s;
 }
 
@@ -233,6 +236,7 @@ background-repeat: no-repeat;
         opacity: 1;
         transform: translateY(0);
     }
+}
 } h2 {
       font-size: 40px;
       margin-bottom: 45px;
