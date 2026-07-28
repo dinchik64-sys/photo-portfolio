@@ -135,6 +135,16 @@ background-repeat: no-repeat;
     text-align: center;
     width: 100%;
     margin-bottom: 45px;
+
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+#services h2.show {
+    opacity: 1;
+    transform: translateY(0);
+}
 }
    .services-list {
     display: flex;
@@ -454,7 +464,21 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 observer.observe(contactSection);
-</script>
+const servicesSection = document.querySelector('#services');
+const servicesTitle = document.querySelector('#services h2');
+
+const servicesObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            servicesTitle.classList.add('show');
+            servicesObserver.unobserve(servicesSection);
+        }
+    });
+}, {
+    threshold: 0.3
+});
+
+servicesObserver.observe(servicesSection);</script>
 
 </body>
 </html>
